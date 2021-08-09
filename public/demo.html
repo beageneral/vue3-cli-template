@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- 引入样式 -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-plus/lib/theme-chalk/index.css"
+    />
+
+    <title>Vue3+tailwindcss+ElementPlus</title>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="add">add</button>
+      <div class="wrapper">
+        <ul>
+          <li v-for="(item, index) in items" :key="index" :data-index="index">
+            <input v-model="item.age" />
+            <el-button @click="remove(index)">删除</el-button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/element-plus/lib/index.full.js"></script>
+
+    <script>
+      const { ref, reactive, readonly } = Vue;
+      const App = {
+        setup(props) {
+          const msg = "xxx";
+          const defaultArray = [
+            {
+              name: "小强1",
+              age: 18,
+              obj: {
+                arr: [1, 23],
+              },
+            },
+            {
+              name: "小红2",
+              age: 17,
+              obj: {
+                arr: [1, 23],
+              },
+            },
+            {
+              name: "小红3",
+              age: 17,
+              obj: {
+                arr: [1, 23],
+              },
+            },
+          ];
+          const items = reactive(defaultArray);
+          const remove = (index) => items.splice(index, 1);
+          const add = () => items.push({ name: "add", age: "" });
+
+          return {
+            add,
+            msg,
+            items,
+            remove,
+          };
+        },
+      };
+
+      Vue.createApp(App).use(ElementPlus).mount("#app");
+    </script>
+  </body>
+</html>

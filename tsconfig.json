@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "allowJs": false,
+    "checkJs": false,
+    "noEmit": false,
+    "baseUrl": ".",
+    "types": ["webpack-env"],
+    "paths": {
+      "@/*": ["src/*"],
+      "@common/*": ["src/logic/common/*"],
+      "@utils/*": ["src/assets/utils/*"],
+      "tslib": ["tslib/tslib.d.ts"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  "compileOnSave": false,
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx", "src/images.d.ts"],
+  "exclude": ["node_modules", "dist", "**/*.js"]
+}

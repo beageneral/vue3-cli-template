@@ -1,0 +1,40 @@
+@mixin theme-form-item {
+  .form-wrapper {
+    .form-item-mr {
+      @apply mr-0 #{!important};
+    }
+
+    :deep .el-form-item {
+      padding-bottom: 0 !important;
+      margin-right: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* start 修复 element-plus 的一些样式 bug */
+    :deep {
+      .el-row,
+      .hidden-form {
+        @apply w-full;
+        @apply mb-3;
+      }
+
+      .el-input {
+        @apply w-4/5;
+      }
+
+      .form-wrapper-items,
+      .el-select {
+        .el-input {
+          @apply w-full;
+        }
+      }
+
+      .list-form-item {
+        .el-input {
+          width: unset;
+        }
+      }
+    }
+    /* end */
+  }
+}

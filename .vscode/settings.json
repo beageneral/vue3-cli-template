@@ -1,0 +1,85 @@
+{
+  // "editor.minimap.maxColumn":12,
+  /* prettier + vuter */
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  /* 让 vetur 用 prettier 去格式化 */
+  "vetur.validation.template": false,
+  // 解决 tailwind 校验错误
+  "vetur.validation.style": false,
+  // vetur 禁用格式化和校验
+  "vetur.format.enable": false,
+  "vetur.validation.script": false,
+  "vetur.format.defaultFormatter.js": "prettier",
+  "vetur.format.defaultFormatter.less": "prettier",
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "printWidth": 150,
+      "tabWidth": 2,
+      "useTabs": false,
+      "semi": false,
+      "singleQuote": true,
+      "quoteProps": "as-needed",
+      "jsxSingleQuote": false,
+      "trailingComma": "es5",
+      "bracketSpacing": true,
+      "jsxBracketSameLine": false,
+      "arrowParens": "always",
+      "htmlWhitespaceSensitivity": "ignore",
+      "vueIndentScriptAndStyle": true,
+      "endOfLine": "lf"
+    }
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "volar.tsPlugin": true,
+  "volar.tsPluginStatus": false,
+  // 开启 stylelint 校验
+  "stylelint.enable": true,
+  // 关闭 editor 内置样式和校验, stylelint 插件建议
+  "less.validate": false,
+  "scss.validate": false,
+  "css.validate": false,
+  // 关闭 JavaScript 验证
+  "javascript.validate.enable": false,
+  // 单词拼写
+  "cSpell.words": [
+    "swiper",
+    "weapp",
+    "commitlint",
+    "filemanager",
+    "vuex",
+    "stylelint",
+    "taobao",
+    "tailwindcss",
+    "compat",
+    "infile",
+    "posttag",
+    "postbump",
+    "nprogress",
+    "webpackbar",
+    "uglifyjs",
+    "storysource"
+  ],
+}

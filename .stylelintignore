@@ -1,0 +1,7 @@
+.gitlab/**/*
+.husky/**/*
+dist
+node_modules
+bin
+public
+tests
