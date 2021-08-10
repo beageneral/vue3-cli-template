@@ -42,6 +42,9 @@ vue3 的 UI 库，目前仍然是高频更新迭代。
 
 可通过 `npm view xxx versions` 查看该依赖发布的版本，然后对其进行降级处理， `npm i xxx@^n -D`。
 
+- elementPlus 等三方组件库整合
+- tailwindcss 整合
+
 ### tailwindcss
 
 一个潮流的 CSS 类库。只需要在 html 上写样式类名，样式就可以生效。相当于给你提供了一大堆已经命名好的样式类集合。
@@ -123,7 +126,7 @@ TODO...
 
 ## QA
 
-### 使用 <script setup> 默认注入的一些 API，被 eslint 报错未定义怎么办？
+### 使用 `<script setup>` 默认注入的一些 API，被 eslint 报错未定义怎么办？
 
 > https://eslint.vuejs.org/user-guide/#faq
 > 通过 eslint 的配置文件进行全局声明，
