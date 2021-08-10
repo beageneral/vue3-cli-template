@@ -1,5 +1,5 @@
 import { App } from 'vue'
-import SvgIcon from '@/components/svg-icon/index.vue'
+import SvgIcon from '@/components/SvgIcon/index.vue'
 
 // 使用require.context 加载./svg目录下所有svg文件
 const req = require.context('./svg', false, /\.svg$/)

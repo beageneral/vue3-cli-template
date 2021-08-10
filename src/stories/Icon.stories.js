@@ -1,4 +1,4 @@
-import AppIcon from '../components/icon'
+import AppIcon from '../components/Icon'
 import { ElButton } from 'element-plus'
 
 export default {
