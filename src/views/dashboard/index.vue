@@ -5,40 +5,34 @@
   <div class="dashboard-container home">
     <el-row class="time">当前时间：{{ time }}</el-row>
     <el-row :gutter="20">
-      <PageHeader />
+      <!-- 动态组件 -->
+      <component :is="PageHeader" :description="[...versionChangeLog].splice(0, 2)" />
 
       <el-col :lg="6" :md="12" :sm="24" :xl="6" :xs="24">
         <div class="text-indigo-500">敬请期待...</div>
       </el-col>
       <el-col :lg="6" :md="12" :sm="24" :xl="6" :xs="24">
         <!-- block2 -->
+        <span class="text-red-400">心脏骤停</span>
       </el-col>
     </el-row>
   </div>
 </template>
 
-<script>
-  import { ref } from 'vue'
-  import Dayjs from 'dayjs'
+<script setup>
+  // 组件引入就可以直接使用
   import PageHeader from './components/PageHeader'
+  import { ref, onMounted } from 'vue'
+  import Dayjs from 'dayjs'
+  import { versionChangeLog } from '@/config'
 
-  export default {
-    name: 'Dashboard',
-    components: {
-      PageHeader,
-    },
-    setup() {
-      const time = ref(new Dayjs().format('YYYY-MM-DD HH:mm:ss'))
+  const time = ref(new Dayjs().format('YYYY-MM-DD HH:mm:ss'))
 
-      setInterval(() => {
-        time.value = new Dayjs().format('YYYY-MM-DD HH:mm:ss')
-      }, 500)
-
-      return {
-        time,
-      }
-    },
-  }
+  onMounted(() =>
+    setInterval(() => {
+      time.value = new Dayjs().format('YYYY-MM-DD HH:mm:ss')
+    }, 500)
+  )
 </script>
 
 <style lang="scss" scoped>

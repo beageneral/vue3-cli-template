@@ -6,7 +6,7 @@
         <p class="page-header-tip-title">
           {{ handleTips() }}
         </p>
-        <div v-for="(p, idx) in description" :key="idx">
+        <div v-for="(p, idx) in props.description" :key="idx">
           <hr v-if="idx !== 0" class="my-2" />
           <p class="page-header-tip-description" v-html="p"></p>
         </div>
@@ -15,37 +15,62 @@
   </el-col>
 </template>
 
+<script setup>
+  /*
+      在该范围内的所有顶级变量，都可以被 template 直接使用
+     */
+  import { useStore } from 'vuex'
+  import { computed } from 'vue'
+
+  const store = useStore()
+  const props = defineProps({
+    description: Array,
+  })
+
+  const avatar = require('@/assets/images/vue3_logo.png')
+  const username = computed(() => store.getters['user/username'])
+
+  const handleTips = () => {
+    const hour = new Date().getHours()
+    return hour < 9
+      ? `早上好 ${username.value}，不想起床。`
+      : hour <= 10
+      ? `上午好 ${username.value}，不想上班。`
+      : hour <= 12
+      ? `中午好 ${username.value}，不想吃饭。`
+      : hour < 16
+      ? `下午好 ${username.value}，想下班了。`
+      : `晚上好 ${username.value}，今晚通宵。`
+  }
+
+  // 1 emit 事件
+  // const emit = defineEmits(['notify'])
+
+  // 2 导出变量
+  // defineExpose({
+  //   props,
+  // })
+
+  // 3 slots 和 attrs 的使用
+  // import { useSlots, useAttrs } from 'vue'
+  // const slots = useSlots()
+  // const attrs = useAttrs()
+
+  // 4 可以直接使用 await，因为 setup 默认是 async 顶级模块
+
+  // 5 当使用 script setup 后，不建议继续使用 src 属性，不然会对开发人员造成混淆
+</script>
+
 <script>
-  import { mapGetters } from 'vuex'
-  import { versionChangeLog } from '@/config'
+  // 可以同时使用多个 script 代码块
+  // 普通的 <script> 下的代码，只会执行一次。用于放置需要仅执行一次的函数。
+  // 在 <script setup> 下的代码，每次创建该组件都会被执行。
 
+  // 一些特殊的 options 属性目前无法在 script setup 中实现
   export default {
-    data() {
-      return {
-        description: [...versionChangeLog].splice(0, 2),
-        avatar: require('@/assets/images/vue3_logo.png'),
-      }
-    },
-    computed: {
-      ...mapGetters({
-        username: 'user/username',
-      }),
-    },
-
-    methods: {
-      handleTips() {
-        const hour = new Date().getHours()
-        return hour < 9
-          ? `早上好 ${this.username}，看到勤劳的你我好开心。`
-          : hour <= 10
-          ? `上午好 ${this.username}，马上要开始干活了~`
-          : hour <= 12
-          ? `中午好 ${this.username}，准备吃午餐了~`
-          : hour < 16
-          ? `下午好 ${this.username}，你一定有些累了，企业微信或许更新了菜单~`
-          : `晚上好 ${this.username}，下班别忘打卡~`
-      },
-    },
+    name: 'PageHeader',
+    inheritAttrs: false,
+    customOptions: {},
   }
 </script>
 

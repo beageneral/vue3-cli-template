@@ -17,6 +17,12 @@ module.exports = {
       jsx: true,
     },
   },
+  globals: {
+    defineProps: "readonly",
+    defineEmits: "readonly",
+    defineExpose: "readonly",
+    withDefaults: "readonly"
+  },
   rules: {
     'vue/no-mutating-props': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',

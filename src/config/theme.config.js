@@ -1,7 +1,7 @@
 /*
  * @Author: wujy
  * @Date: 2021-01-14 19:43:33
- * @LastEditTime: 2021-08-09 14:31:33
+ * @LastEditTime: 2021-08-10 14:17:43
  * @Description: 主题配置
  */
 
@@ -23,7 +23,7 @@ module.exports = {
   // 主题名称：default
   themeName: 'default',
   // 版权信息
-  copyright: `Copyright © 2000-${new Date().getFullYear()} DXY All Rights Reserved. 浙B2-20070219（含BBS）版本：${process.env.VUE_APP_VERSION}`,
+  copyright: `Copyright © 2000-${new Date().getFullYear()} Vue3-cli-template All Rights Reserved. Version：${process.env.VUE_APP_VERSION}`,
   // 是否只保持一个子菜单的展开
   uniqueOpened: false,
   // 默认展开的菜单path，使用逗号隔开建议只展开一个
