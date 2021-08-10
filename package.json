@@ -20,7 +20,7 @@
     "update:plus": "npm-check -u",
     "svgo": "svgo -f src/assets/icons/svg --config=src/assets/icons/svgo.yml",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o public/storybook-static"
   },
   "dependencies": {
     "autoprefixer": "^10.3.1",
