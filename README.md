@@ -38,12 +38,10 @@ vue3 的 UI 库，目前仍然是高频更新迭代。
 
 ### storybook
 
-涉及到安装 `css-loader, style-loader, postcss-loader, sass-loader` ，遇到跑不起来的问题，多半是依赖的版本问题。
+关于如何应用
 
-可通过 `npm view xxx versions` 查看该依赖发布的版本，然后对其进行降级处理， `npm i xxx@^n -D`。
-
-- elementPlus 等三方组件库整合
-- tailwindcss 整合
+- 可以参考官方文档，[StoryBook for Vue](https://storybook.js.org/docs/vue/writing-stories/introduction)
+- 一些简单的梳理，[StoryBook Note 语雀](https://www.yuque.com/wujy/giv0be/gmyvwe)
 
 ### tailwindcss
 

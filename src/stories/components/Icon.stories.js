@@ -1,16 +1,19 @@
+import config from '../config'
 import AppIcon from '@/components/Icon'
 import { ElButton } from 'element-plus'
 
+// 默认导出关于组件的基础功能描述
 export default {
-  title: '业务组件/Icon',
+  title: `${config.bizName}/Icon`,
   component: AppIcon,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    style: { control: 'color' },
     size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
     onClick: {},
   },
 }
 
+// 这里的拿到的 args 是上面 argTypes + 下面具名 args 的合集参数
 const Template = (args) => ({
   components: { AppIcon, ElButton },
   setup() {
@@ -30,4 +33,5 @@ export const Secondary = Template.bind({})
 Secondary.args = {
   icon: 'el-icon-s-opportunity',
   flex: true,
+  type: 'x',
 }

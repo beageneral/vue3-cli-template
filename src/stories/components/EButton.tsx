@@ -10,8 +10,16 @@ export default defineComponent({
       default: 'el-button default msg',
       required: true,
     },
+    color: {
+      type: String as PropType<string>,
+      default: '',
+    },
   },
   setup(props) {
-    return () => <el-button {...props}>el-components & tsx demo: {props.msg}</el-button>
+    return () => (
+      <el-button {...props} style={{ color: props.color }}>
+        {props.msg}
+      </el-button>
+    )
   },
 })
