@@ -80,7 +80,8 @@ vue 项目的国际化解决方案。
 
 ### 配套 vscode 插件
 
-- volar，vue3 专用插件
+- Vetur (如果你熟悉 Vetur 的功能，则是被推荐使用的）
+- Volar (若你使用 TS 或者 `<script setup>` 语法，则 Volar 是被推荐使用的)
 - Tailwind CSS IntelliSense，TailwindCSS 模板语法提示
 
 ## 项目设计
