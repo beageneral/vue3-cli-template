@@ -20,7 +20,7 @@
       在该范围内的所有顶级变量，都可以被 template 直接使用
      */
   import { useStore } from 'vuex'
-  import { computed } from 'vue'
+  import { computed, ref } from 'vue'
 
   const store = useStore()
   const props = defineProps({
@@ -29,6 +29,9 @@
 
   const avatar = require('@/assets/images/vue3_logo.png')
   const username = computed(() => store.getters['user/username'])
+
+  // 给 <style> v-bind 使用的样式变量
+  const styleVal = ref('#808695')
 
   const handleTips = () => {
     const hour = new Date().getHours()
@@ -112,7 +115,7 @@
 
       &-description {
         font-size: $base-font-size-default;
-        color: #808695;
+        color: v-bind(styleVal);
       }
     }
 
