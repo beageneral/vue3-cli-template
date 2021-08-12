@@ -115,6 +115,17 @@ module.exports = {
     // 修复 HMR
     config.resolve.symlinks(true)
 
+    // HACK vue3.2 实验特性，$ref | $computed
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+      .tap((options) => {
+        return {
+          ...options,
+          refSugar: true,
+        }
+      })
+
     // svg 处理
     // 在已有的svg loader配置中 排除掉对 assets/icons 里 svg 进行转换
     config.module

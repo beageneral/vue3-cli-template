@@ -22,15 +22,17 @@
 <script setup>
   // 组件引入就可以直接使用
   import PageHeader from './components/PageHeader'
-  import { ref, onMounted } from 'vue'
+  import { $ref, onMounted } from 'vue'
   import Dayjs from 'dayjs'
   import { versionChangeLog } from '@/config'
 
-  const time = ref(new Dayjs().format('YYYY-MM-DD HH:mm:ss'))
+  let time = $ref(new Dayjs().format('YYYY-MM-DD HH:mm:ss'))
 
   onMounted(() =>
     setInterval(() => {
-      time.value = new Dayjs().format('YYYY-MM-DD HH:mm:ss')
+      // HACK $ref 是 vue3.2 实验性特性，搭配 vue.config.js 的配置使用
+      // 就像是是普通的响应式对象，无需使用 .value
+      time = new Dayjs().format('YYYY-MM-DD HH:mm:ss')
     }, 500)
   )
 </script>
